@@ -41,7 +41,7 @@ private:
 
     void setup_terminal()		//터미널 세팅하는 함수
     {
-        // 현재 터미널 속성을 가져옴
+        // 현재 터미널 설정을 가져옴
         tcgetattr(STDIN_FILENO, &oldt); 
         termios newt = oldt; 
         
@@ -117,7 +117,7 @@ private:
         ssize_t size = read(STDIN_FILENO, &c, 1); 
         if (size > 0)
         {
-            if (c == '\x1b') // 방향키 (이스케이프 시퀀스)
+            if (c == '\x1b') // 방향키 (아스키시퀀스)
             {
                 char seq[2];
                 read(STDIN_FILENO, &seq[0], 1);
