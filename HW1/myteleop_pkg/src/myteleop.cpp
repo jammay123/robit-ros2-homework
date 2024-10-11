@@ -114,7 +114,7 @@ private:
     void timer_callback() 	// 타이머 콜백 함수
     {
         char c;
-        ssize_t size = read(STDIN_FILENO, &c, 1); 
+        char size = read(STDIN_FILENO, &c, 1); 
         if (size > 0)
         {
             if (c == '\x1b') // 방향키 (아스키시퀀스)
@@ -189,4 +189,3 @@ int main(int argc, char * argv[])
     rclcpp::shutdown();
     return 0;
 }
-
