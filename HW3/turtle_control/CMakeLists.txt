@@ -35,7 +35,7 @@ add_library(mainwindow_lib
 target_link_libraries(mainwindow_lib Qt5::Widgets)
 ament_target_dependencies(mainwindow_lib rclcpp ros2_custom_interface)
 
-# Add executable (단일 실행 파일로 통합)
+# Add executable 
 add_executable(turtle_control
   src/main.cpp
 )
